@@ -7,14 +7,17 @@ function Venue() {
     <section className={classes.venue}>
       <div className={classes.image}>
         <Image
-          src="/images/site/the-pointy-peck.jpg"
-          alt="The Pointy Peck"
+          src="/images/site/the-pecking-pointe.jpg"
+          alt="The Pecking Pointe"
           width={300}
           height={300}
         />
       </div>
-      <h1>The Pointy Peck</h1>
-      <p>A blog which chronicles the events of The Pointy Peck.</p>
+      <h1>The Pecking Pointe</h1>
+      <p>
+        A blog that chronicles the sometimes busy and not-so-busy events of The
+        Pecking Pointe.
+      </p>
     </section>
   );
 }
