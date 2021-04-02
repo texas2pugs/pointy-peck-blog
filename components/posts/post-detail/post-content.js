@@ -1,25 +1,51 @@
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
 
 import PostHeader from './post-header';
 import classes from './post-content.module.css';
 
-const DUMMY_POSTS = {
-  slug: 'new-establishment',
-  title: 'New Establishment!',
-  content: '# This is a first post',
-  date: '2021-03-31',
-  image: 'the-pecking-pointe.jpg',
-};
+function PostContent(props) {
+  const { post } = props;
 
-function PostContent() {
-  console.log('Inside PostContent()');
-  console.log(DUMMY_POSTS);
-  const imagePath = `/images/posts/${DUMMY_POSTS.slug}/${DUMMY_POSTS.image}`;
+  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+
+  const customRenderers = {
+    // image(image) {
+    //   return (
+    //     <Image
+    //       src={`/images/posts/${post.slug}/${image.src}`}
+    //       alt={image.alt}
+    //       width={600}
+    //       height={450}
+    //     />
+    //   );
+    // },
+    paragraph(paragraph) {
+      const { node } = paragraph;
+
+      if (node.children[0].type === 'image') {
+        const image = node.children[0];
+
+        return (
+          <div className={classes.image}>
+            <Image
+              src={`/images/posts/${post.slug}/${image.url}`}
+              alt={image.alt}
+              width={600}
+              height={450}
+            />
+          </div>
+        );
+      }
+
+      return <p>{paragraph.children}</p>;
+    },
+  };
 
   return (
     <article className={classes.content}>
-      <PostHeader title={DUMMY_POSTS.title} image={imagePath} />
-      <ReactMarkdown>{DUMMY_POSTS.content}</ReactMarkdown>
+      <PostHeader title={post.title} image={imagePath} />
+      <ReactMarkdown renderers={customRenderers}>{post.content}</ReactMarkdown>
     </article>
   );
 }
