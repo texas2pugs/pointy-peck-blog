@@ -6,7 +6,7 @@ excerpt: Romance is in the air on this Spring lunch date!
 isRecent: true
 ---
 
-It's Spring time and love is definitely in the air! The Redwings flew into The Pecking Pointe today for a romantic outdoor lunch.
+It's Spring time and love is definitely in the air! The Redwings flew into The Pecking Pointe today for a romantic outdoor lunch. The couple flew in and found two available spots near the bar.
 
 ![The Pecking Pointe receives it's first couple](PXL_20210330_164906088.jpg)
 

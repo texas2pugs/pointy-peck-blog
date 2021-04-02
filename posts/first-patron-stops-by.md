@@ -6,6 +6,10 @@ excerpt: The Pecking Pointe served its first customer today.
 isRecent: true
 ---
 
-# The Pecking Pointe sees it's first customer.
+# The Pecking Pointe serves it's first customer.
 
-Mr. Brownfeather pecked and cracked through seed and seed at The Pecking Pointe today. With a light breeze and sunny skies, Mr. Brownfeather gave a churp as he enjoyed a tasty meal. "These seeds are the freshest I've had in a long time! I'll be sure to return and tell my friends about this new hangout." Grapping a small seed, Mr. Brownfeather flew off with satisfied customer.
+Mr. Cardibrown pecked and cracked through seed after seed at The Pecking Pointe today. With a light breeze and sunny skies, Mr. Cardibrown gave a churp as he enjoyed a savory meal.
+
+![Mr. Cardibrown enjoying a seed at The Pecking Pointe](PXL_20210330_163946773.jpg)
+
+"These seeds are the freshest I've had in a long time! The sunflower is particully tasty. I'd love to get the recipe! I'll be sure to stop by again and tell my friends about this new hangout." Grabbing a small seed for the road, Mr. Cardibrown flew off a satisfied customer.
