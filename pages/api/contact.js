@@ -1,4 +1,6 @@
-function handler(req, res) {
+import { MongoClient } from 'mongodb';
+
+async function handler(req, res) {
   if (req.method === 'POST') {
     const { email, name, message } = req.body;
 
@@ -21,7 +23,28 @@ function handler(req, res) {
       message,
     };
 
-    console.log(newMessage);
+    let client;
+
+    const connectionString = `mongodb+srv://${process.env.mongodb_user}:${process.env.mongodb_pass}@${process.env.mongodb_cluster}/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
+    try {
+      client = await MongoClient.connect(connectionString);
+    } catch (error) {
+      res.status(500).json({ message: 'Database unreachable' });
+      return;
+    }
+
+    const db = client.db();
+
+    try {
+      const result = await db.collection('messages').insertOne(newMessage);
+      newMessage.id = result.insertedId;
+    } catch (error) {
+      client.close();
+      res.status(500).json({ message: 'Storing message failed!' });
+    }
+
+    client.close();
 
     res.status(201).json({ message: 'Message received' });
   }
